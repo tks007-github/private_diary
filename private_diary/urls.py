@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from django.contrib import admin
-from django.contrib import path, include
+from django.urls import path, include
 
 
 urlpatterns = [
