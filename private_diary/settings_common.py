@@ -23,12 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ny3=r_7u)eby@1=e#671b3ri8011yv6ql*n1w(*7nm-wre2y6t'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -127,46 +121,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ロギング設定
-LOGGING = {
-    'version': 1, # 1固定
-    'disabele_existing_loggers': False,
-
-    # ロガーの設定
-    'loggers': {
-        # Djangoが利用するロガー
-        'django': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        },
-        # diaryアプリケーションが利用するロガー
-        'diary': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-        },
-    },
-
-    # ハンドラの設定
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'dev'
-        },
-    },
-
-    # フォーマッタの設定
-    'formatters': {
-        'dev': {
-            'format': '\t'.join([
-                '%(asctime)s',
-                '[%(levelname)s]',
-                '%(pathname)s(Line:%(lineno)d)',
-                '%(message)s'
-            ])
-        },
-    }
-}
 
 STATICFILES_DIRS = (
 
